@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Clock from "./components/clock";
+import LikeButton from "./components/like_button";
+ // eslint-disable-next-line
+const APIKey = "00a3462d266d46af9a6f2050b45ff2fd";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      date: new Date()
+    }
+    // this.getNews = this.getNews.bind(this);
+  }
+  componentDidMount(){
+    var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=us&' +
+          'apiKey=00a3462d266d46af9a6f2050b45ff2fd';
+var req = new Request(url);
+fetch(req)
+    .then(function(response) {
+        console.log(response.json());
+    })
+  }
+  render(){
+    return(
+      <div className="App">
+       <div className="header_conainer">
+         <h1 className="header_name">News App</h1>
+         <Clock/>
+       </div>
+       <div className="article_container">
+         <LikeButton/>
+       </div>
+      </div>
+    );
+  }
 }
-
 export default App;
