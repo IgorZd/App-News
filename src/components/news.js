@@ -47,8 +47,6 @@ class News extends React.Component {
   }
   render() {
     if (this.state.data.length !== 0) {
-        const arrtArticles = this.state.data;
-      console.log(arrtArticles);
       return (
         <div className="news_list">
           <div className="container_input">
