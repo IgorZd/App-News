@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/like_button.css";
 class LikeButton extends React.Component {
   constructor(props){
     super(props);
