@@ -1,8 +1,8 @@
 import React from "react";
-import Clock from "./components/clock";
-import News from "./components/news";
-import Footer from "./components/footer";
-import "./style/header.css";
+import Clock from "./components/Clock/clock";
+import News from "./components/News/news";
+import Footer from "./components/Footer/footer";
+import "./style/header.scss";
 // eslint-disable-next-line
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class App extends React.Component {
         <div className="article_container">
           <News />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

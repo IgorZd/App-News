@@ -1,5 +1,5 @@
 import React from "react";
-import LikeButton from "./like_button";
+import LikeButton from "../Like_button/like_button";
 function NumberList(props) {
   const numbers = props.filtered;
   const listArticles = numbers.map((number, index) => (

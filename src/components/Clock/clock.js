@@ -1,27 +1,27 @@
 import React from "react";
-import "../style/clock.css";
-function FormattedDate(props){
+import "../../style/clock.scss";
+function FormattedDate(props) {
     return (
-    <div>
-     <h3 className="date">{(new Date()).toDateString()}</h3>
-    <h3 className="clock">{props.date.toLocaleTimeString()}</h3>
-    </div>
-);
+        <div>
+            <h3 className="date">{(new Date()).toDateString()}</h3>
+            <h3 className="clock">{props.date.toLocaleTimeString()}</h3>
+        </div>
+    );
 }
 class Clock extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             date: new Date()
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
             1000
         );
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         clearInterval(this.timerID);
     }
     tick() {
@@ -29,9 +29,9 @@ class Clock extends React.Component {
             date: new Date()
         });
     }
-    render(){
-        return(
-            <FormattedDate date={this.state.date}/>
+    render() {
+        return (
+            <FormattedDate date={this.state.date} />
         );
     }
 }

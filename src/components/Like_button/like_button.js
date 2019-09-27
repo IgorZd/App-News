@@ -1,7 +1,7 @@
 import React from "react";
-import "../style/like_button.css";
+import "../../style/like_button.scss";
 class LikeButton extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       likes: 0,
@@ -9,7 +9,7 @@ class LikeButton extends React.Component {
     };
   }
   updateLikes = () => {
-    if(!this.state.updated) {
+    if (!this.state.updated) {
       this.setState((prevState, props) => {
         return {
           likes: prevState.likes + 1,
@@ -17,17 +17,16 @@ class LikeButton extends React.Component {
         };
       });
     } else {
-      this.setState((prevState, props) => {
-        return {
-          likes: prevState.likes - 1,
-          updated: false
-        };
-      });
+      this.setState((prevState, props) => ({
+        likes: prevState.likes - 1,
+        updated: false
+      })
+      );
     }
   }
-  render(){
+  render() {
     const label = this.state.updated ? 'Unlike' : 'Like'
-    return(
+    return (
       <div className="like_container">
         <p>{this.state.likes}</p>
         <button className="btn_primary" onClick={this.updateLikes}>{label}</button>
