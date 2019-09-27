@@ -3,7 +3,7 @@ import { shallow, mount } from "enzyme";
 import configureStore from "redux-mock-store";
 import { getArticles } from "../../store/actions";
 import ConnectedNews, { News } from "../News/news";
-import { Provider } from "react-redux";
+import { Provider } from "../../../node_modules/react-redux";
 import thunk from "redux-thunk";
 describe('News', () => {
     let wrapper;

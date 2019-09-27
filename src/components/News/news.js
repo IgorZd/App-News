@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect } from "../../../node_modules/react-redux";
 import { getArticles } from "../../store/actions";
 import NumberList from "../Number_list/number_list";
 import "../../style/news.scss";
